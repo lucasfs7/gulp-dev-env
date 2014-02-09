@@ -1,6 +1,20 @@
-Simple development env for static sites and single page apps using gulp, jade, stylus and coffee script.
+Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/), [jade](http://jade-lang.com/), [stylus](http://learnboost.github.io/stylus/) and [coffee script](http://coffeescript.org/).
 
 ---
+
+### expected directory structure
+
+```
+project
+  |_ src
+      |_ stylus
+      |_ coffee
+      |_ vendor
+          |_ scripts
+  |_ build
+      |_ scripts
+      |_ stylesheets
+```
 
 ### initiating
 
