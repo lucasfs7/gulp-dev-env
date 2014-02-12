@@ -2,6 +2,10 @@ Simple development env for static sites and single page apps using [gulp](http:/
 
 ---
 
+Read the article about this [here](http://lucasfsouza.com.br/blog/articles/apenas-mais-um-ambiente-frontend/) - PT/BR
+
+---
+
 ### expected directory structure
 
 ```
