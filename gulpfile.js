@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 var path = {
+  layouts: './src/layouts/**/*.jade',
   jade: './src/**/*.jade',
   stylus: './src/stylus/**/*.styl',
   scripts: {
@@ -15,7 +16,7 @@ var path = {
 };
 
 gulp.task('compile:html', function() {
-  gulp.src(path.jade)
+  gulp.src(path.jade, '!'+path.layouts)
     .pipe(jade())
     .pipe(gulp.dest('./build/'))
 });

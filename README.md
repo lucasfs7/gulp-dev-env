@@ -11,6 +11,7 @@ Read the article about this [here](http://lucasfsouza.com.br/blog/articles/apena
 ```
 project
   |_ src
+      |_ layouts
       |_ stylus
       |_ scripts
           |_ app
