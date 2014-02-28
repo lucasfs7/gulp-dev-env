@@ -8,7 +8,7 @@ var concat = require('gulp-concat');
 var path = {
   layouts: './src/layouts/**/*.jade',
   jade: './src/**/*.jade',
-  stylus: './src/stylus/**/*.styl',
+  stylus: './src/stylus/*.styl',
   scripts: {
     app: './src/scripts/app/**/*.js',
     vendor: './src/scripts/vendor/**/*.js'
