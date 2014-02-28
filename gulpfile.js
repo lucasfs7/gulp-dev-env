@@ -16,7 +16,7 @@ var path = {
 };
 
 gulp.task('compile:html', function() {
-  gulp.src(path.jade, '!'+path.layouts)
+  gulp.src([path.jade, '!'+path.layouts])
     .pipe(jade())
     .pipe(gulp.dest('./build/'))
 });
