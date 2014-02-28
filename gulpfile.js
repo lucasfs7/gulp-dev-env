@@ -9,6 +9,7 @@ var path = {
   layouts: './src/layouts/**/*.jade',
   jade: './src/**/*.jade',
   stylus: './src/stylus/*.styl',
+  stylusAll: './src/stylus/**/*.styl',
   scripts: {
     app: './src/scripts/app/**/*.js',
     vendor: './src/scripts/vendor/**/*.js'
@@ -48,7 +49,7 @@ gulp.task('build', ['compile:html', 'compile:css', 'concat:scripts:app', 'concat
 
 gulp.task('default', ['build'], function(){
   gulp.watch(path.jade, ['compile:html']);
-  gulp.watch(path.stylus, ['compile:css']);
+  gulp.watch(path.stylusAll, ['compile:css']);
   gulp.watch(path.scripts.app, ['concat:scripts:app']);
   gulp.watch(path.scripts.vendor, ['concat:scripts:vendor']);
 });
