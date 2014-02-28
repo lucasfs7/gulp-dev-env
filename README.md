@@ -51,7 +51,7 @@ Compiling stylus:
 $ gulp compile:css
 ```
 
-concating scripts:
+Concatenating scripts:
 
 ```
 $ gulp concat:scripts:app
