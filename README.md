@@ -67,5 +67,11 @@ $ gulp build
 Watching files modifications:
 
 ```
+$ gulp watch
+```
+
+Building and watching:
+
+```
 $ gulp
 ```

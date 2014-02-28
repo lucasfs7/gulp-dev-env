@@ -47,9 +47,11 @@ gulp.task('concat:scripts:vendor', function() {
 
 gulp.task('build', ['compile:html', 'compile:css', 'concat:scripts:app', 'concat:scripts:vendor']);
 
-gulp.task('default', ['build'], function(){
+gulp.task('watch', function() {
   gulp.watch(path.jade, ['compile:html']);
   gulp.watch(path.stylusAll, ['compile:css']);
   gulp.watch(path.scripts.app, ['concat:scripts:app']);
   gulp.watch(path.scripts.vendor, ['concat:scripts:vendor']);
 });
+
+gulp.task('default', ['build', 'watch']);
