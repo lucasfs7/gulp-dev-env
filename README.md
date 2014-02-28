@@ -12,9 +12,9 @@ Read the article about this [here](http://lucasfsouza.com.br/blog/articles/apena
 project
   |_ src
       |_ stylus
-      |_ coffee
-      |_ vendor
-          |_ scripts
+      |_ scripts
+          |_ app
+          |_ vendor
   |_ build
       |_ scripts
       |_ stylesheets
@@ -26,13 +26,13 @@ Start vagrant to create the vm and install all dependencies
 
 ```
 $ vagrant up
-$ vagrant ssh
 ```
 
 Run `npm install` inside vagrant to install modules dependencies
 
 ```
 $ vagrant ssh
+$ cd /vagrant
 $ npm install
 ```
 
@@ -50,10 +50,11 @@ Compiling stylus:
 $ gulp compile:css
 ```
 
-Compiling coffe script:
+concating scripts:
 
 ```
-$ gulp compile:javascript
+$ gulp concat:scripts:app
+$ gulp concat:scripts:vendor
 ```
 
 Building:
