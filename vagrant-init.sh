@@ -17,5 +17,13 @@ sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get -y install nodejs
 
+# nginx
+echo "Installing nginx"
+sudo apt-get -y install nginx
+echo "Coping nginx domain config"
+cp nginx.conf /etc/nginx/sites-enabled/localhost
+echo "Adding nginx service to the system startup"
+sudo /usr/sbin/update-rc.d -f nginx defaults
+
 # gulp.js and modules
 sudo npm install -g gulp gulp-util
