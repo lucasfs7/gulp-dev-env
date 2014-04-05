@@ -58,6 +58,12 @@ $ gulp concat:scripts:app
 $ gulp concat:scripts:vendor
 ```
 
+Optimizing images
+
+```
+$ gulp compress:images
+```
+
 Building:
 
 ```
