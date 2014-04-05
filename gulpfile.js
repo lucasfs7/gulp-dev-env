@@ -4,6 +4,7 @@ var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var imagemin = require('gulp-imagemin');
 
 var path = {
   layouts: './src/layouts/**/*.jade',
@@ -13,7 +14,12 @@ var path = {
   scripts: {
     app: './src/scripts/app/**/*.js',
     vendor: './src/scripts/vendor/**/*.js'
-  }
+  },
+  images: [
+    './src/images/**/*.jpg',
+    './src/images/**/*.png',
+    './src/images/**/*.gif'
+  ]
 };
 
 gulp.task('compile:html', function() {
@@ -45,13 +51,20 @@ gulp.task('concat:scripts:vendor', function() {
     .pipe(gulp.dest('./build/scripts/'))
 });
 
-gulp.task('build', ['compile:html', 'compile:css', 'concat:scripts:app', 'concat:scripts:vendor']);
+gulp.task('compress:images', function() {
+  gulp.src(path.images)
+    .pipe(imagemin())
+    .pipe(gulp.dest('./build/images/'));
+});
+
+gulp.task('build', ['compile:html', 'compile:css', 'concat:scripts:app', 'concat:scripts:vendor', 'compress:images']);
 
 gulp.task('watch', function() {
   gulp.watch(path.jade, ['compile:html']);
   gulp.watch(path.stylusAll, ['compile:css']);
   gulp.watch(path.scripts.app, ['concat:scripts:app']);
   gulp.watch(path.scripts.vendor, ['concat:scripts:vendor']);
+  gulp.watch(path.images, ['compress:images']);
 });
 
 gulp.task('default', ['build', 'watch']);
