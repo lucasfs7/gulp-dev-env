@@ -48,6 +48,7 @@ gulp.task('browserify:app', function() {
       transform: ['liveify'],
       extensions: ['.ls']
     }))
+    .pipe(uglify())
     .pipe(rename('app.js'))
     .pipe(gulp.dest('./build/scripts'))
 });
@@ -55,7 +56,7 @@ gulp.task('browserify:app', function() {
 gulp.task('concat:scripts:vendor', function() {
   gulp.src(path.scripts.vendor)
     .pipe(concat("vendor.js"))
-    .pipe(uglify({outSourceMap: true}))
+    .pipe(uglify())
     .pipe(gulp.dest('./build/scripts/'))
 });
 
