@@ -4,7 +4,9 @@ var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var browserify = require('gulp-browserify');
 var imagemin = require('gulp-imagemin');
+var rename = require('gulp-rename');
 
 var path = {
   layouts: './src/layouts/**/*.jade',
@@ -13,7 +15,10 @@ var path = {
   stylusAll: './src/stylus/**/*.styl',
   scripts: {
     app: './src/scripts/app/**/*.js',
-    vendor: './src/scripts/vendor/**/*.js'
+    vendor: './src/scripts/vendor/**/*.js',
+    modules: {
+      main: './src/scripts/app/main.ls'
+    }
   },
   images: [
     './src/images/**/*.jpg',
@@ -37,11 +42,14 @@ gulp.task('compile:css', function () {
     .pipe(gulp.dest('./build/stylesheets'));
 });
 
-gulp.task('concat:scripts:app', function() {
-  gulp.src(path.scripts.app)
-    .pipe(concat("app.js"))
-    .pipe(uglify({outSourceMap: true}))
-    .pipe(gulp.dest('./build/scripts/'))
+gulp.task('browserify:app', function() {
+  gulp.src(path.scripts.modules.main, { read: false })
+    .pipe(browserify({
+      transform: ['liveify'],
+      extensions: ['.ls']
+    }))
+    .pipe(rename('app.js'))
+    .pipe(gulp.dest('./build/scripts'))
 });
 
 gulp.task('concat:scripts:vendor', function() {
@@ -57,7 +65,7 @@ gulp.task('compress:images', function() {
     .pipe(gulp.dest('./build/images/'));
 });
 
-gulp.task('build', ['compile:html', 'compile:css', 'concat:scripts:app', 'concat:scripts:vendor', 'compress:images']);
+gulp.task('build', ['compile:html', 'compile:css', 'browserify:app', 'concat:scripts:vendor', 'compress:images']);
 
 gulp.task('watch', function() {
   gulp.watch(path.jade, ['compile:html']);

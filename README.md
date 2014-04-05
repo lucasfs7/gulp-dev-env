@@ -51,14 +51,19 @@ Compiling stylus:
 $ gulp compile:css
 ```
 
-Concatenating scripts:
+Concatenating vendor scripts:
 
 ```
-$ gulp concat:scripts:app
 $ gulp concat:scripts:vendor
 ```
 
-Optimizing images
+Browserifing app scripts:
+
+```
+$ gulp browserify:app
+```
+
+Optimizing images:
 
 ```
 $ gulp compress:images
