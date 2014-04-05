@@ -1,4 +1,4 @@
-Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/), [jade](http://jade-lang.com/) and [stylus](http://learnboost.github.io/stylus/).
+Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/), [jade](http://jade-lang.com/), [stylus](http://learnboost.github.io/stylus/) and [browserify](http://browserify.org/).
 
 ---
 
