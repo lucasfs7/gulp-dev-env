@@ -1,19 +1,31 @@
 {
+  "version": "0.1.0",
   "scripts": {
-    "start": "node ./node_modules/gulp/bin/gulp"
+    "start": "node ./server.js",
+    "watch": "gulp",
+    "compile": "gulp build -uc",
+    "test": "gulp compile:templates && browserify -t liveify --extension=.ls test/*.ls | testling"
   },
   "dependencies": {
-    "gulp-uglify": ">= 0.2.1",
-    "gulp-concat": ">= 2.1.7",
-    "gulp-stylus": ">= 0.0.12",
-    "gulp-jade": ">= 0.4.1",
-    "nib": "~1.0.2",
-    "gulp-util": "^2.2.14",
+    "browser-request": "^0.3.2",
+    "browserify": "^4.1.10",
+    "express": "^3.4.x",
     "gulp": "^3.5.2",
-    "gulp-imagemin": "^0.2.0",
-    "liveify": "^0.4.0",
     "gulp-browserify": "^0.5.0",
+    "gulp-concat": ">= 2.1.7",
+    "gulp-define-module": "^0.1.1",
+    "gulp-imagemin": "^0.2.0",
+    "gulp-jade": ">= 0.4.1",
+    "gulp-minify-css": "^0.3.4",
     "gulp-rename": "^1.2.0",
-    "browser-request": "^0.3.1"
+    "gulp-stylus": ">= 0.0.12",
+    "gulp-uglify": ">= 0.2.1",
+    "gulp-util": "^2.2.14",
+    "liveify": "^0.4.0",
+    "minimist": "^0.1.0",
+    "nib": "~1.0.2",
+    "phantomjs": "^1.9.7-8",
+    "tape": "^2.13.3",
+    "testling": "^1.6.1"
   }
 }
