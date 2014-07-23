@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var util = require('gulp-util');
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
+var nib = require('nib');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var browserify = require('gulp-browserify');
@@ -37,7 +38,7 @@ gulp.task('compile:css', function () {
   gulp.src(path.stylus)
     .pipe(stylus({
       set:['compress'],
-      use: ['nib']
+      use: [nib()]
     }))
     .pipe(gulp.dest('./build/stylesheets'));
 });
