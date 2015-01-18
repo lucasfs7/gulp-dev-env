@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var util = require('gulp-util');
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
-var nib = require('nib');
+var ks = require('kouto-swiss');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var browserify = require('gulp-browserify');
@@ -40,7 +40,7 @@ gulp.task('compile:html', function() {
 
 gulp.task('compile:css', function () {
   var t = gulp.src(path.stylus);
-  t = t.pipe(stylus({use: [nib()]}));
+  t = t.pipe(stylus({use: [ks()]}));
 
   if (argv.c) {
     t = t.pipe(minifyCSS());
