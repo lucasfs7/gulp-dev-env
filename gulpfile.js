@@ -9,8 +9,6 @@ const browserifyApp = require('./tasks/browserify-app')
 const concatScripts = require('./tasks/concat-scripts')
 const compileTemplates = require('./tasks/compile-templates')
 const compressImages = require('./tasks/compress-images')
-console.log(compressImages)
-
 
 task('compile:html', compileHTML)
 task('compile:css', compileCSS)
