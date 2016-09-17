@@ -18,12 +18,12 @@ task('compile:templates', compileTemplates)
 task('compress:images', compressImages)
 
 gulp.task('watch', function() {
-  gulp.watch(path.jade, ['compile:html']);
-  gulp.watch(path.scripts.modules.templates, ['compile:templates', 'browserify:app']);
-  gulp.watch(path.stylusAll, ['compile:css']);
-  gulp.watch(path.scripts.app, ['browserify:app']);
-  gulp.watch(path.scripts.vendor, ['concat:scripts:vendor']);
-  gulp.watch(path.images, ['compress:images']);
+  gulp.watch(config.path.jade, ['compile:html']);
+  gulp.watch(config.path.scripts.modules.templates, ['compile:templates', 'browserify:app']);
+  gulp.watch(config.path.stylusAll, ['compile:css']);
+  gulp.watch(config.path.scripts.app, ['browserify:app']);
+  gulp.watch(config.path.scripts.vendor, ['concat:scripts:vendor']);
+  gulp.watch(config.path.images, ['compress:images']);
 });
 
 gulp.task('build', [
