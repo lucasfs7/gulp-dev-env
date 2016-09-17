@@ -15,7 +15,8 @@ exports.path = {
   images: [
     './src/images/**/*.jpg',
     './src/images/**/*.png',
-    './src/images/**/*.gif'
+    './src/images/**/*.gif',
+    './src/images/**/*.svg'
   ],
   dist: './build/'
 }
