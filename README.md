@@ -1,4 +1,4 @@
-Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/), [jade](http://jade-lang.com/), [stylus](http://learnboost.github.io/stylus/) and [browserify](http://browserify.org/).
+Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/) for tasks, [jade](http://jade-lang.com/) for templates, [stylus](http://learnboost.github.io/stylus/) for CSS, babel for next gen javascript and [browserify](http://browserify.org/) to bundle modular script.
 
 ---
 
@@ -11,33 +11,37 @@ Read the article about this [here](http://lucasfsouza.com.br/blog/articles/apena
 ```
 project
   |_ src
-      |_ layouts
-      |_ stylus
-      |_ scripts
-          |_ app
-          |_ vendor
+  |   |_ layouts
+  |   |_ stylus
+  |   |_ scripts
+  |   |   |_ app
+  |   |   |_ vendor
+  |   |_ modules
   |_ build
       |_ scripts
       |_ stylesheets
 ```
 
-### initiating
-
-Start vagrant to create the vm and install all dependencies
-
-```
-$ vagrant up
-```
-
-Run `npm install` inside vagrant to install modules dependencies
-
-```
-$ vagrant ssh
-$ cd /vagrant
-$ npm install
-```
-
 ### using
+
+#### Default npm scripts:
+
+Start dev server:
+```
+$ npm start
+```
+
+Start watching code:
+```
+$ npm run watch
+```
+
+Compile code:
+```
+$ npm run compile
+```
+
+#### Gulp tasks
 
 Compiling jade:
 
@@ -86,3 +90,9 @@ Building and watching:
 ```
 $ gulp
 ```
+
+### TODO
+
+- bring uglify and minify back
+- add lint config
+- task for unit tests

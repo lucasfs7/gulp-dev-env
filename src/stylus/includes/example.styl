@@ -3,10 +3,11 @@ body
   font-family Verdana, Helvetica, Arial, sans-serif
 
 h1
-  font-size 5em
+  font-size 3.5em
 
-p
-  font-size 2em
+p,
+li
+  font-size 1.5em
 
 .box
   background lighten(#000, 80%)
@@ -17,9 +18,22 @@ p
   font-size .7em
   box-sizing border-box
   border 3px solid lighten(#000, 30%)
+  overflow hidden
 
   p
     margin 5px
+
+  li
+    margin 5px 5px 5px 25px
+
+  .float
+    box-sizing border-box
+    margin 0
+    padding 20px
+    float left
+    width 50%
+    list-style none
+    text-align center
 
 footer
   max-width 700px

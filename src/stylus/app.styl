@@ -1,10 +1,4 @@
-@import "kouto-swiss"
-
-meyer-reset()
-box-sizing-reset()
-normalize()
-
-@import 'includes/example' 
+@import 'includes/example'
 @import 'includes/nprogress'
 
 .title,
@@ -14,9 +8,13 @@ normalize()
   text-align center
 
 .title
+  max-width: 500px
   color darken(#29d, 30%)
   text-shadow orange 0 -2px
 
 .description
   color lighten(#000, 30%)
   text-decoration underline
+
+.feature-img
+  width 100%
