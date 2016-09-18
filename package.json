@@ -15,6 +15,7 @@
     "babelify": "7.3.0",
     "browserify": "13.1.0",
     "gulp": "3.9.1",
+    "gulp-babel": "6.1.2",
     "gulp-concat": "2.6.0",
     "gulp-imagemin": "3.0.3",
     "gulp-jade": "1.1.0",

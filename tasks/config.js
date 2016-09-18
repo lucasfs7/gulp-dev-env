@@ -8,6 +8,7 @@ exports.path = {
     app: './src/scripts/app/**/*.js',
     vendor: './src/scripts/vendor/**/*.js',
     modules: {
+      dir: './src/modules/',
       entry: './src/modules/app.js',
     }
   },
