@@ -90,3 +90,9 @@ Building and watching:
 ```
 $ gulp
 ```
+
+### TODO
+
+- bring uglify and minify back
+- add lint config
+- task for unit tests
