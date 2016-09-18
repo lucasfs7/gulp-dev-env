@@ -1,4 +1,4 @@
-Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/), [jade](http://jade-lang.com/), [stylus](http://learnboost.github.io/stylus/) and [browserify](http://browserify.org/).
+Simple development env for static sites and single page apps using [gulp](http://gulpjs.com/) for tasks, [jade](http://jade-lang.com/) for templates, [stylus](http://learnboost.github.io/stylus/) for CSS, babel for next gen javascript and [browserify](http://browserify.org/) to bundle modular script.
 
 ---
 
@@ -19,22 +19,6 @@ project
   |_ build
       |_ scripts
       |_ stylesheets
-```
-
-### initiating
-
-Start vagrant to create the vm and install all dependencies
-
-```
-$ vagrant up
-```
-
-Run `npm install` inside vagrant to install modules dependencies
-
-```
-$ vagrant ssh
-$ cd /vagrant
-$ npm install
 ```
 
 ### using

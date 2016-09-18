@@ -1,5 +1,5 @@
 const browserify = require('browserify')
-const livescript = require('browserify-livescript')
+const babelify = require('babelify')
 const source = require('vinyl-source-stream')
 
 module.exports = (gulp, util, path) => (() => {
@@ -15,7 +15,9 @@ module.exports = (gulp, util, path) => (() => {
       debug: true,
       insertGlobals: true
     })
-    .transform(livescript)
+    .transform(babelify, {
+      presets: ['latest']
+    })
     .bundle()
     .pipe(source('app.js'))
     .pipe(dist)

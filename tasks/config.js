@@ -4,10 +4,10 @@ exports.path = {
   stylus: './src/stylus/*.styl',
   stylusAll: './src/stylus/**/*.styl',
   scripts: {
-    app: './src/scripts/app/**/*.ls',
+    app: './src/scripts/app/**/*.js',
     vendor: './src/scripts/vendor/**/*.js',
     modules: {
-      main: './src/scripts/app/main.ls',
+      main: './src/scripts/app/main.js',
       templates: './src/scripts/app/templates/**/*.jade',
       templatesDir: './src/scripts/app/templates/'
     }
