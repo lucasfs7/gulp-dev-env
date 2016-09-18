@@ -11,7 +11,7 @@ module.exports = (gulp, util, path) => (() => {
 
   return browserify({
       entries: src,
-      extensions: ['.ls'],
+      extensions: ['.js'],
       debug: true,
       insertGlobals: true
     })
