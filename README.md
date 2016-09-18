@@ -11,11 +11,12 @@ Read the article about this [here](http://lucasfsouza.com.br/blog/articles/apena
 ```
 project
   |_ src
-      |_ layouts
-      |_ stylus
-      |_ scripts
-          |_ app
-          |_ vendor
+  |   |_ layouts
+  |   |_ stylus
+  |   |_ scripts
+  |   |   |_ app
+  |   |   |_ vendor
+  |   |_ modules
   |_ build
       |_ scripts
       |_ stylesheets

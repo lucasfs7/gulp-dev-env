@@ -4,7 +4,7 @@ const source = require('vinyl-source-stream')
 
 module.exports = (gulp, util, path) => (() => {
   const src = [
-    path.scripts.modules.main
+    path.scripts.modules.entry
   ]
 
   const dist = gulp.dest(`${ path.dist }scripts`)
@@ -19,6 +19,6 @@ module.exports = (gulp, util, path) => (() => {
       presets: ['latest']
     })
     .bundle()
-    .pipe(source('app.js'))
+    .pipe(source('bundle.js'))
     .pipe(dist)
 })
