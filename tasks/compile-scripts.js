@@ -1,5 +1,6 @@
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
+const sourcemaps = require('gulp-sourcemaps')
 
 exports.app = (gulp, util, path) => (() => {
   const src = [
@@ -10,9 +11,11 @@ exports.app = (gulp, util, path) => (() => {
 
   return gulp
     .src(src)
+    .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['latest']
     }))
     .pipe(concat('app.js'))
+    .pipe(sourcemaps.write('.'))
     .pipe(dist)
 })
