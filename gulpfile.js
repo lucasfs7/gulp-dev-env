@@ -17,10 +17,10 @@ task('compress:images', compressImages)
 
 gulp.task('watch', function() {
   gulp.watch(config.path.jade, ['compile:html']);
-  gulp.watch(config.path.stylusAll, ['compile:css']);
+  gulp.watch(config.path.stylusDir, ['compile:css']);
   gulp.watch(config.path.scripts.app, ['browserify:app']);
-  gulp.watch(config.path.scripts.vendor, ['concat:scripts:vendor']);
-  gulp.watch(config.path.images, ['compress:images']);
+  gulp.watch(config.path.scripts.dir, ['concat:scripts:vendor']);
+  gulp.watch(config.path.imagesDir, ['compress:images']);
 });
 
 gulp.task('build', [
