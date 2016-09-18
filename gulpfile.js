@@ -7,19 +7,16 @@ const compileHTML = require('./tasks/compile-html')
 const compileCSS = require('./tasks/compile-css')
 const browserifyApp = require('./tasks/browserify-app')
 const concatScripts = require('./tasks/concat-scripts')
-const compileTemplates = require('./tasks/compile-templates')
 const compressImages = require('./tasks/compress-images')
 
 task('compile:html', compileHTML)
 task('compile:css', compileCSS)
-task('browserify:app', ['compile:templates'], browserifyApp)
+task('browserify:app', browserifyApp)
 task('concat:scripts:vendor', concatScripts.vendor)
-task('compile:templates', compileTemplates)
 task('compress:images', compressImages)
 
 gulp.task('watch', function() {
   gulp.watch(config.path.jade, ['compile:html']);
-  gulp.watch(config.path.scripts.modules.templates, ['compile:templates', 'browserify:app']);
   gulp.watch(config.path.stylusAll, ['compile:css']);
   gulp.watch(config.path.scripts.app, ['browserify:app']);
   gulp.watch(config.path.scripts.vendor, ['concat:scripts:vendor']);

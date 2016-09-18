@@ -8,8 +8,6 @@ exports.path = {
     vendor: './src/scripts/vendor/**/*.js',
     modules: {
       main: './src/scripts/app/main.js',
-      templates: './src/scripts/app/templates/**/*.jade',
-      templatesDir: './src/scripts/app/templates/'
     }
   },
   images: [
