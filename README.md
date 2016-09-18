@@ -96,3 +96,4 @@ $ gulp
 - bring uglify and minify back
 - add lint config
 - task for unit tests
+- add some provision (maybe vagrant again or otto)
