@@ -23,6 +23,25 @@ project
 
 ### using
 
+#### Default npm scripts:
+
+Start dev server:
+```
+$ npm start
+```
+
+Start watching code:
+```
+$ npm run watch
+```
+
+Compile code:
+```
+$ npm run compile
+```
+
+#### Gulp tasks
+
 Compiling jade:
 
 ```
